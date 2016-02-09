@@ -184,7 +184,7 @@ end
 --End Check Member
 local function show_group_settingsmod(msg, data, target)
         if not is_momod(msg) then
-        return "For moderators only!"
+        return "برای مدیران گروه!"
         end
         local data = load_data(_config.moderation.data)
     if data[tostring(msg.to.id)] then
@@ -247,7 +247,7 @@ local function set_descriptionmod(msg, data, target, about)
   local data_cat = 'description'
   data[tostring(target)][data_cat] = about
   save_data(_config.moderation.data, data)
-  return 'گزاشتن شرح  گروه:\n'..about
+  return 'شرح گروه تغییر داده شد به:\n'..about
 end
 local function get_description(msg, data)
   local data_cat = 'description'
