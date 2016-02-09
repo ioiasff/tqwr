@@ -224,7 +224,8 @@ function create_config( )
     "sms",
     "Debian_service",
     "sudoers",
-    "add_admin".
+    "add_admin"
+    "plugins",
     "anti_spam",
     "add_bot",
     "owners",
@@ -239,104 +240,104 @@ function create_config( )
     sudo_users = {118682430},--Sudo users
     disabled_channels = {},
     moderation = {data = 'data/moderation.json'},
-    about_text = [[Creed bot 2.3
+    about_text = [[Death bot 2.3
     
-     Hello my Good friends 
+     سلام دوست عزیز
      
-    ‼️ this bot is made by : @creed_is_dead
-   〰〰〰〰〰〰〰〰
-   ߔࠀ   our admins are : 
-   ߔࠀ   @sorblack_creed
-   ߔࠀ   @amircc_creed
-   ߔࠀ   @aria_creed
-   〰〰〰〰〰〰〰〰
-  ♻️ You can send your Ideas and messages to Us By sending them into bots account by this command :
+    مدیر اصلی : @arash_admin_death
+   🚩
+      همه ادمین های بات:
+   🆔   @arash_admin_daeth
+   🆔   @xx_mersad_xx
+   🔺🔺🔺🔺🔺🔺🔺🔺🔺🔺
+  کانال ما :
+ ‌ @deathch
    تمامی درخواست ها و همه ی انتقادات و حرفاتونو با دستور زیر بفرستین به ما
-   !feedback (your ideas and messages)
+   !feedback (نظرات شما)
 ]],
     help_text_realm = [[
-Realm Commands:
-
-!creategroup [Name]
-Create a group
+دستورات گروه مادر:
+ 
+ساخت گروه (نام(
+➕
 گروه جدیدی بسازید
 
-!createrealm [Name]
-Create a realm
+ساخت گپ مادر (نام(
+➕⭕
 گروه مادر جدیدی بسازید
 
-!setname [Name]
-Set realm name
+setname [Name]
+➕
 اسم گروه مادر را تغییر بدهید
 
-!setabout [GroupID] [Text]
-Set a group's about text
+setabout [GroupID] [Text]
+➕
 در مورد  آن گروه توضیحاتی را بنویسید (ای دی گروه را بدهید )
 
-!setrules [GroupID] [Text]
-Set a group's rules
+setrules [GroupID] [Text]
+➕
 در مورد آن گروه قوانینی تعیین کنید ( ای دی گروه را بدهید )
 
-!lock [GroupID] [setting]
-Lock a group's setting
+lock [GroupID] [setting]
+➕
 تنظیکات گروهی را قفل بکنید
 
 !unlock [GroupID] [setting]
-Unock a group's setting
+➕
 تنظیمات گروهی را از قفل در بیاورید 
 
-!wholist
-Get a list of members in group/realm
+wholist
+➕
 لیست تمامی اعضای گروه رو با ای دی شون نشون میده
 
-!who
-Get a file of members in group/realm
+who
+➕⭕
 لیست تمامی اعضای گروه را با ای دی در فایل متنی دریافت کنید
 
-!type
-Get group type
+type
+➕✴
 در مورد نقش گروه بگیرید
 
-!kill chat [GroupID]
-Kick all memebers and delete group ⛔️⛔️
+kill chat [GroupID]
+ ⛔️⛔️
 ⛔️تمامی اعضای گروه را حذف میکند ⛔️
 
-!kill realm [RealmID]
-Kick all members and delete realm⛔️⛔️
+kill realm [RealmID]
+➕🚫
 تمامی اعضای گروه مارد را حذف میکند
 
-!addadmin [id|username]
-Promote an admin by id OR username *Sudo only
+addadmin [id|username]
+➕
 ادمینی را اضافه بکنید
 
 
-!removeadmin [id|username]
-Demote an admin by id OR username *Sudo only❗️❗️
+removeadmin [id|username]
+ ✅✅
 ❗️❗️ادمینی را با این دستور صلب مقام میکنید ❗️❗️
 
-!list groups
-Get a list of all groups
+list groups
+💢
 لیست تمامی گروه هارو میده
 
-!list realms
-Get a list of all realms
+list realms
+💢
 لیست گروه های مادر را میدهد
 
 
-!log
-Get a logfile of current group or realm
+log
+💥
 تمامی عملیات گروه را میدهد
 
-!broadcast [text]
-Send text to all groups ✉️
+broadcast [text]
+✉️
 ✉️ با این دستور به تمامی گروه ها متنی را همزمان میفرستید  .
 
-!br [group_id] [text]
-This command will send text to [group_id]✉️
+bc [group_id] [text]
+✉️
 با این دستور میتونید به گروه توسط ربات متنی را بفرستید 
 
-You Can user both "!" & "/" for them
-میتوانید از هردوی کاراکتر های ! و / برای دستورات استفاده کنید
+@deathch
+🚩🚩🚩🚩🚩🚩🚩🚩🚩🚩🚩🚩🚩🚩🚩
 
 
 ]],
