@@ -42,7 +42,7 @@ end
 
 local function chat_stats2(chat_id)
   -- Users on chat
-  local hash = 'chat:'..chat_id..':users'
+  local hash = 'گروه ها:'..chat_id..':کاربران'
   local users = redis:smembers(hash)
   local users_info = {}
 
@@ -91,15 +91,15 @@ local function bot_stats()
   return text
 end
 local function run(msg, matches)
-  if matches[1]:lower() == 'creedbot' then -- Put everything you like :)
+  if matches[1]:lower() == 'deatgbot' then -- Put everything you like :)
     local about = _config.about_text
     local name = user_print_name(msg.from)
-    savelog(msg.to.id, name.." ["..msg.from.id.."] used /creedbot ")
+    savelog(msg.to.id, name.." ["..msg.from.id.."] used /deathbot ")
     return about
   end 
   if matches[1]:lower() == "statslist" then
     if not is_momod(msg) then
-      return "For mods only !"
+      return "برای مدیران گروه"
     end
     local chat_id = msg.to.id
     local name = user_print_name(msg.from)
@@ -109,7 +109,7 @@ local function run(msg, matches)
   if matches[1]:lower() == "stats" then
     if not matches[2] then
       if not is_momod(msg) then
-        return "For mods only !"
+        return "برای مدیران گروه"
       end
       if msg.to.type == 'chat' then
         local chat_id = msg.to.id
@@ -120,16 +120,16 @@ local function run(msg, matches)
         return
       end
     end
-    if matches[2] == "creedbot" then -- Put everything you like :)
+    if matches[2] == "deathbot" then -- Put everything you like :)
       if not is_admin(msg) then
-        return "For admins only !"
+        return "برای مدیران ربات!"
       else
         return bot_stats()
       end
     end
     if matches[2] == "group" then
       if not is_admin(msg) then
-        return "For admins only !"
+        return "برای مدیران ربات !"
       else
         return chat_stats(matches[3])
       end
@@ -138,11 +138,11 @@ local function run(msg, matches)
 end
 return {
   patterns = {
-    "^[!/]([Ss]tats)$",
-    "^[!/]([Ss]tatslist)$",
-    "^[!/]([Ss]tats) (group) (%d+)",
-    "^[!/]([Ss]tats) (creedbot)",-- Put everything you like :)
-		"^[!/]([Cc]reedbot)"-- Put everything you like :)
+    "^([Ss]tats)$",
+    "^([Ss]tatslist)$",
+    "^([Ss]tats) (group) (%d+)",
+    "^([Ss]tats) (deathbot)",-- Put everything you like :)
+		"^([Dd]eathbot)"-- Put everything you like :)
     }, 
   run = run
 }
