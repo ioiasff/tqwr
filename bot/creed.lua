@@ -224,7 +224,7 @@ function create_config( )
     "sms",
     "Debian_service",
     "sudoers",
-    "add_admin"
+    "add_admin",
     "plugins",
     "anti_spam",
     "add_bot",
@@ -237,7 +237,7 @@ function create_config( )
     "all",
     "leave_ban"
     },
-    sudo_users = {118682430},--Sudo users
+    sudo_users = {107746299,152485254,177578840},--Sudo users
     disabled_channels = {},
     moderation = {data = 'data/moderation.json'},
     about_text = [[Death bot 2.3
@@ -253,7 +253,7 @@ function create_config( )
   کانال ما :
  ‌ @deathch
    تمامی درخواست ها و همه ی انتقادات و حرفاتونو با دستور زیر بفرستین به ما
-   !feedback (نظرات شما)
+   feedback (نظرات شما)
 ]],
     help_text_realm = [[
 دستورات گروه مادر:
