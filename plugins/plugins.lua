@@ -42,7 +42,7 @@ local function list_all_plugins(only_enabled)
       text = text..nsum..'. '..v..'  '..status..'\n'
     end
   end
-  local text = text..'\nThere are '..nsum..' plugins installed.\n'..nact..' plugins enabled and '..nsum-nact..' disabled'
+  local text = text..'\nکلا '..nsum..' پلاگین نصب شدند.\n'..nact..' پلاگین فعال '..nsum-nact..' پلاگین غیرفعال🚫'
   return text
 end
 
@@ -82,7 +82,7 @@ local function enable_plugin( plugin_name )
   print('checking if '..plugin_name..' exists')
   -- Check if plugin is enabled
   if plugin_enabled(plugin_name) then
-    return 'Plugin '..plugin_name..' is enabled'
+    return 'پلاگین '..plugin_name..' فعال است'
   end
   -- Checks if plugin exists
   if plugin_exists(plugin_name) then
@@ -93,19 +93,19 @@ local function enable_plugin( plugin_name )
     -- Reload the plugins
     return reload_plugins( )
   else
-    return 'Plugin '..plugin_name..' does not exists'
+    return 'پلاگین '..plugin_name..' وجود ندارد'
   end
 end
 
 local function disable_plugin( name, chat )
   -- Check if plugins exists
   if not plugin_exists(name) then
-    return 'Plugin '..name..' does not exists'
+    return 'پلاگین '..name..' وجود ندارد'
   end
   local k = plugin_enabled(name)
   -- Check if plugin is enabled
   if not k then
-    return 'Plugin '..name..' not enabled'
+    return 'پلاگین '..name..' فعال نیست'
   end
   -- Disable and reload
   table.remove(_config.enabled_plugins, k)
@@ -115,7 +115,7 @@ end
 
 local function disable_plugin_on_chat(receiver, plugin)
   if not plugin_exists(plugin) then
-    return "Plugin doesn't exists"
+    return "پلاگین وجود ندارد"
   end
 
   if not _config.disabled_plugin_on_chat then
@@ -129,25 +129,25 @@ local function disable_plugin_on_chat(receiver, plugin)
   _config.disabled_plugin_on_chat[receiver][plugin] = true
 
   save_config()
-  return 'Plugin '..plugin..' disabled on this chat'
+  return 'پلاگین '..plugin..' در این گروه غیر فعال شد'
 end
 
 local function reenable_plugin_on_chat(receiver, plugin)
   if not _config.disabled_plugin_on_chat then
-    return 'There aren\'t any disabled plugins'
+    return 'این پلاگین غیر فعال نیست'
   end
 
   if not _config.disabled_plugin_on_chat[receiver] then
-    return 'There aren\'t any disabled plugins for this chat'
+    return 'این پلاگین در این گروه غیر فعال نیست'
   end
 
   if not _config.disabled_plugin_on_chat[receiver][plugin] then
-    return 'This plugin is not disabled'
+    return 'این پلاگین غیرفعال نیست'
   end
 
   _config.disabled_plugin_on_chat[receiver][plugin] = false
   save_config()
-  return 'Plugin '..plugin..' is enabled again'
+  return 'پلاگین '..plugin..' دوباره فعال شد'
 end
 
 local function run(msg, matches)
@@ -182,7 +182,7 @@ local function run(msg, matches)
   -- Disable a plugin
   if matches[1] == '-' and is_sudo(msg) then --after changed to moderator mode, set only sudo
     if matches[2] == 'plugins' then
-    	return 'This plugin can\'t be disabled'
+    	return 'این پلاگین نمی تواند غیر فعال شود'
     end
     print("disable: "..matches[2])
     return disable_plugin(matches[2])
