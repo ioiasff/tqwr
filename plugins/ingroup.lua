@@ -156,7 +156,7 @@ local function check_member_realmrem(cb_extra, success, result)
       end
       data[tostring(realms)][tostring(msg.to.id)] = nil
       save_data(_config.moderation.data, data)
-      return send_large_msg(receiver, 'این گروه مادر از لیست کروهای مادر من پاک شد.')
+      return send_large_msg(receiver, 'این گروه مادر از لیست گروهای مادر من پاک شد.')
     end
   end
 end
